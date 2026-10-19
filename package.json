@@ -1,0 +1,55 @@
+{
+  "name": "@dsh-family/kit",
+  "version": "0.1.0",
+  "description": "Shared filesystem primitives for dsh plugins: crash-safe atomic full-file writes shared across the family.",
+  "type": "module",
+  "license": "MIT",
+  "main": "./lib/index.js",
+  "types": "./lib/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./lib/types/index.d.ts",
+      "default": "./lib/index.js"
+    },
+    "./kit/fs": {
+      "types": "./lib/types/kit/fs.d.ts",
+      "default": "./lib/kit/fs.js"
+    },
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "dsh": {
+    "role": "shared-lib"
+  },
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json",
+    "prepare": "npm run build",
+    "test": "node --test \"test/*.test.ts\"",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run typecheck && npm test && npm run build"
+  },
+  "keywords": [
+    "dsh",
+    "deepseek-harness",
+    "kit",
+    "atomic-write",
+    "shared"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/121212165/dsh-plugin-kit.git"
+  },
+  "sideEffects": false,
+  "devDependencies": {
+    "typescript": "7.0.2",
+    "@types/node": "26.6.2"
+  }
+}
