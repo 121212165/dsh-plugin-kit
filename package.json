@@ -21,7 +21,8 @@
     "lib",
     "src",
     "README.md",
-    "LICENSE"
+    "LICENSE",
+    "kit"
   ],
   "dsh": {
     "role": "shared-lib"
@@ -34,14 +35,16 @@
     "prepare": "npm run build",
     "test": "node --test \"test/*.test.ts\"",
     "typecheck": "tsc --noEmit",
-    "check": "npm run typecheck && npm test && npm run build"
+    "check": "npm run typecheck && npm test && npm run build",
+    "prepublishOnly": "npm run check"
   },
   "keywords": [
     "dsh",
     "deepseek-harness",
     "kit",
     "atomic-write",
-    "shared"
+    "shared",
+    "dsh-plugin"
   ],
   "repository": {
     "type": "git",
