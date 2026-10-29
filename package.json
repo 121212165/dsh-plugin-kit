@@ -1,7 +1,7 @@
 {
   "name": "@dsh-family/kit",
-  "version": "0.2.0",
-  "description": "Shared primitives for dsh plugins: crash-safe atomic full-file writes and the GitHub REST fetch path used by the scanning plugins.",
+  "version": "0.2.1",
+  "description": "Shared primitives for dsh plugins: atomic full-file writes, the GitHub REST fetch path used by the scanning plugins, and the mock-ctx harness every plugin test builds on.",
   "type": "module",
   "license": "MIT",
   "main": "./lib/index.js",
@@ -19,6 +19,10 @@
     "./kit/http": {
       "types": "./lib/types/kit/http.d.ts",
       "default": "./lib/kit/http.js"
+    },
+    "./kit/test-harness": {
+      "types": "./lib/types/kit/test-harness.d.ts",
+      "default": "./lib/kit/test-harness.js"
     }
   },
   "files": [
